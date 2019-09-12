@@ -16,5 +16,5 @@ vendor/
 
 tmp/
 
-output/
+build/
 go_starter

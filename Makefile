@@ -1,10 +1,10 @@
 BINARY=go_build
 
 default:
-	go build -o output/${BINARY} -v
+	go build -o build/${BINARY} -v
 
 prod:
-	go build -o output/${BINARY} -v
+	go build -o build/${BINARY} -v
 
 
 install:

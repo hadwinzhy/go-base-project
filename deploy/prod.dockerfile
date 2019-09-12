@@ -19,5 +19,5 @@ RUN make prod
 
 
 FROM ubuntu:latest AS base
-COPY --from=builder /go/src/app/output/ /bin/
+COPY --from=builder /go/src/app/build/ /bin/
 ENTRYPOINT [ "sh",  "-c", "/bin/go_build" ]
