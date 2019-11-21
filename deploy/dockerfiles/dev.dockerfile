@@ -23,4 +23,4 @@ COPY --from=builder /go/src/app/configs /app/
 
 RUN chmod 777 /app/app.bin
 
-ENTRYPOINT [ "sh",  "-c", "/app.bin serve" ]
+ENTRYPOINT [ "sh",  "-c", "/app/app.bin serve" ]
