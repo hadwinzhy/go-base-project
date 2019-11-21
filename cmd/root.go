@@ -25,7 +25,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "go_build",
+	Use:   "app.bin",
 	Short: "Golang Application",
 	Long:  `Golang Application`,
 	// Uncomment the following line if your bare application

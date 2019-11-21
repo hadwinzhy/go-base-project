@@ -1,6 +1,6 @@
 package main
 
-import "gitlab.cloudwalk.work/product-center/go_starter.git/cmd"
+import "gitlab.cloudwalk.work/product-center/hotpot-backend.git/cmd"
 
 func main() {
 	// Step1: load config

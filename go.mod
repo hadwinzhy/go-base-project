@@ -1,8 +1,9 @@
-module gitlab.cloudwalk.work/product-center/go_starter.git
+module gitlab.cloudwalk.work/product-center/hotpot-backend.git
 
 go 1.13
 
 require (
+	github.com/gin-contrib/cors v1.3.0
 	github.com/gin-gonic/gin v1.4.0
 	github.com/mattn/go-isatty v0.0.9 // indirect
 	github.com/spf13/cobra v0.0.5

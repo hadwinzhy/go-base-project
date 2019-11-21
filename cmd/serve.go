@@ -20,7 +20,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
-	"gitlab.cloudwalk.work/product-center/go_starter.git/configs"
+	"gitlab.cloudwalk.work/product-center/hotpot-backend.git/configs"
+	"gitlab.cloudwalk.work/product-center/hotpot-backend.git/src/routers"
 )
 
 // serveCmd represents the serve command
@@ -34,6 +35,7 @@ var serveCmd = &cobra.Command{
 
 		configs.InitConfig()
 
+		routers.InitRouters(r)
 		r.Run() // listen and serve on 0.0.0.0:8080
 	},
 }
