@@ -1,0 +1,19 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./deploy/dockerfiles/dev.dockerfile
+      buildContext: .
+      tag: cloudwalk_public/cw-hotpot-backend:${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
+      pushRemote: true
+      registry: registry.cn-shanghai.aliyuncs.com
+    when:
+      branch:
+        include:
+        - dev
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deploy/k8s/dev-deployment.yaml
+timeout: 60
+notification: {}
