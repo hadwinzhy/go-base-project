@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cw-hotpot-backend
+  namespace: app
+spec:
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: cw-rhea
+    spec:
+      containers:
+      - name: cw-rhea
+        image: registry.cn-shanghai.aliyuncs.com/cloudwalk_public/cw-hotpot-backend:${CICD_GIT_BRANCH}-${CICD_GIT_COMMIT}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
+      imagePullSecrets:
+        - name: aliyun
