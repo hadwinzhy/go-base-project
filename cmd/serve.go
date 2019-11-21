@@ -20,6 +20,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
+	"gitlab.cloudwalk.work/product-center/go_starter.git/configs"
 )
 
 // serveCmd represents the serve command
@@ -30,11 +31,9 @@ var serveCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("serve starting...")
 		r := gin.Default()
-		r.GET("/ping", func(c *gin.Context) {
-			c.JSON(200, gin.H{
-				"message": "pong",
-			})
-		})
+
+		configs.InitConfig()
+
 		r.Run() // listen and serve on 0.0.0.0:8080
 	},
 }

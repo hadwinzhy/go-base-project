@@ -1,10 +1,10 @@
-BINARY=go_build
+BINARY=app.bin
 
 default:
-	go build -o build/${BINARY} -v
+	go build -o target/${BINARY} -v
 
 prod:
-	go build -o build/${BINARY} -v
+	go build -o target/${BINARY} -v
 
 
 install:
@@ -22,6 +22,6 @@ test:
 
 # Cleans our project: deletes binaries
 clean:
-	rm -rf go_build
+	rm -rf target/*
 
 .PHONY:  default clean install dev prod test
