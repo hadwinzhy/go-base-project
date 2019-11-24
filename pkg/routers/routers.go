@@ -2,8 +2,8 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"gitlab.cloudwalk.work/product-center/hotpot-backend.git/middleware"
-	"gitlab.cloudwalk.work/product-center/hotpot-backend.git/src/service/admins"
+	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/middleware"
+	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/src/admins"
 )
 
 ////////// Public Method //////////

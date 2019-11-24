@@ -1,10 +1,10 @@
-package admins
+package service
 
 import (
 	"github.com/gin-gonic/gin"
-	"gitlab.cloudwalk.work/product-center/hotpot-backend.git/src/admins/dao"
+	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/src/admins/dao"
 )
 
-func createHandler(c *gin.Context) {
+func CreateHandler(c *gin.Context) {
 	dao.InitAdmin()
 }

@@ -1,34 +1,17 @@
-package configurations
+package configs
 
 import (
 	"fmt"
 
 	"github.com/spf13/viper"
-	"gitlab.cloudwalk.work/product-center/hotpot-backend.git/configs/initializers"
+	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/configs/initializers"
 )
 
 // Configuration will include one db config and many service config
 type Configuration struct {
 	Env      string
-	Service  []ServiceConfiguration
-	Database DBConfiguration
-}
-
-// DBConfiguration like postgres or mysql config
-type DBConfiguration struct {
-	Driver   string
-	DBname   string
-	Username string
-	Password string
-	Host     string
-	Port     string
-}
-
-// ServiceConfiguration like kafka redis and so on...
-type ServiceConfiguration struct {
-	Name string
-	Host string
-	Port string
+	Service  []initializers.ServiceConfiguration
+	Database initializers.DBConfiguration
 }
 
 // AppConfig is system singleton config

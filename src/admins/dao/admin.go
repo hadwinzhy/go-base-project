@@ -1,5 +1,5 @@
 package dao
 
-func InitAdmin(){
+func InitAdmin() {
 
 }

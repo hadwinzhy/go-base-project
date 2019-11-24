@@ -1,4 +1,4 @@
-module gitlab.cloudwalk.work/product-center/hotpot-backend.git
+module gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git
 
 go 1.13
 
