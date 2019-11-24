@@ -1,0 +1,8 @@
+dev:
+  db:
+    host: "10.128.138.144"
+    port: "5432"
+    user: "postgres"
+    password: "root"
+    dbname: "venus_dev"
+    sslmode: "disable"
