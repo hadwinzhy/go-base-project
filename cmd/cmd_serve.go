@@ -6,8 +6,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
 
-	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/configs"
-	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/pkg/routers"
+	"cw-app/hotpot-backend/configs"
+	"cw-app/hotpot-backend/pkg/routers"
 )
 
 // serveCmd represents the serve command

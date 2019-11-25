@@ -2,7 +2,7 @@ package admins
 
 import (
 	"github.com/gin-gonic/gin"
-	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/src/admins/service"
+	"cw-app/hotpot-backend/src/admins/service"
 )
 
 ////////// Public Methods //////////

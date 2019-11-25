@@ -1,6 +1,6 @@
 package main
 
-import "gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/cmd"
+import "cw-app/hotpot-backend/cmd"
 
 func main() {
 	// Step1: load config

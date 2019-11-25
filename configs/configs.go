@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/viper"
-	"gitlab.cloudwalk.work/product-center/pc-public/cw-app/hotpot-backend.git/configs/initializers"
+	"cw-app/hotpot-backend/configs/initializers"
 )
 
 // Configuration will include one db config and many service config
