@@ -7,6 +7,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"cw-app/hotpot-backend/configs"
+	"cw-app/hotpot-backend/pkg/connection"
 	"cw-app/hotpot-backend/pkg/routers"
 )
 
@@ -20,6 +21,9 @@ var serveCmd = &cobra.Command{
 
 		r := gin.Default()
 		configs.InitConfig()
+
+		pg := connection.InitPGConnection()
+		defer pg.Close()
 
 		routers.InitRouters(r)
 		r.Run(":8081") // listen and serve on 0.0.0.0:8080

@@ -1,34 +1,38 @@
 package configs
 
 import (
-	"fmt"
-
-	"github.com/spf13/viper"
+	"cw-app/hotpot-backend/configs/cwviper"
 	"cw-app/hotpot-backend/configs/initializers"
 )
 
-// Configuration will include one db config and many service config
-type Configuration struct {
-	Env      string
-	Service  []initializers.ServiceConfiguration
-	Database initializers.DBConfiguration
-}
+// SystemConfig will return system config
+var SystemConfig *initializers.SystemConfig
 
-// AppConfig is system singleton config
-// var AppConfig *Configuration
+// ServicesConfig will save database config
+var ServicesConfig *[]initializers.ServicesConfig
+
+// DatabaseConfig will save database config
+var DatabaseConfig *initializers.DatabaseConfig
 
 // InitConfig will load settings
 func InitConfig() {
-	initializers.InitViper()
 
-	// set application yaml & vairable
-	initializers.ReadYAMLfile("application.yaml")
-	initializers.InitApplicationEnv()
+	// Step 1 Read all yaml in system
+	cwviper.InitViper()
+	if err := cwviper.ReadYAMLfile("system.yaml"); err != nil {
+		panic("config yaml failed: " + err.Error())
+	}
+	SystemConfig = initializers.InitSystemConfig()
 
-	// set database yaml & vairable
-	initializers.ReadYAMLfile("database.yaml")
-	initializers.InitDatabaseEnv()
+	// Step 2 Read all yaml in service
+	if err := cwviper.ReadYAMLfile("service.yaml"); err != nil {
+		panic("config yaml failed: " + err.Error())
+	}
+	ServicesConfig = initializers.InitServiceConfig(SystemConfig.Env)
 
-	host := viper.GetString("dev.db.host")
-	fmt.Println("host is " + host)
+	// Step 3 Read all yaml in database
+	if err := cwviper.ReadYAMLfile("database.yaml"); err != nil {
+		panic("config yaml failed: " + err.Error())
+	}
+	DatabaseConfig = initializers.InitDatabaseConfig(SystemConfig.Env)
 }

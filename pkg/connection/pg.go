@@ -1,17 +1,22 @@
 package connection
 
-import "github.com/jinzhu/gorm"
+import (
+	"cw-app/hotpot-backend/configs"
+	"fmt"
+
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+)
 
 // PG is Singleton
 var PG *gorm.DB
 
-// InitDBConn will init db and return singleton instance
-func InitDBConn() *gorm.DB {
-	PG, err := gorm.Open("postgres", getDBSettings())
+// InitPGConnection will init db and return singleton instance
+func InitPGConnection() *gorm.DB {
+	PG, err := gorm.Open("postgres", getPGDBString())
 	if err != nil {
 		panic("failed to connect database" + err.Error())
 	}
-
 	PG.LogMode(true)
 	PG.DB().SetMaxIdleConns(3)
 	PG.DB().SetMaxOpenConns(10)
@@ -20,6 +25,16 @@ func InitDBConn() *gorm.DB {
 }
 
 //TODO  write to common database config
-func getDBSettings() string {
-	return ""
+func getPGDBString() string {
+	dbConfig := configs.DatabaseConfig
+	dbString := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
+		dbConfig.Host,
+		dbConfig.Port,
+		dbConfig.Username,
+		dbConfig.Password,
+		dbConfig.DBname,
+		dbConfig.SslMode,
+	)
+	fmt.Println(dbString)
+	return dbString
 }

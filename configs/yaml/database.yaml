@@ -1,8 +1,9 @@
 dev:
   db:
-    host: "10.128.138.144"
-    port: "5432"
+    driver: "pg"
+    host: "10.128.122.172"
+    port: "25432"
     user: "postgres"
-    password: "root"
-    dbname: "venus_dev"
+    password: "yckj@123"
+    dbname: "hotpot-dev"
     sslmode: "disable"
