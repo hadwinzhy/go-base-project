@@ -5,7 +5,7 @@ install:
 	go mod download
 
 local:
-	fresh -c deploy/dev/fresh_runner.conf
+	air -c deploy/local/air.conf
 
 dev:
 	go build -o target/${BINARY} -v

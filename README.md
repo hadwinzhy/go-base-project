@@ -5,7 +5,9 @@ go & gin & gorm starter
 
 ### LOCAL环境配置
 
-go get -u github.com/zhangriyueming/fresh
+go get -u github.com/cosmtrek/air
+然后添加PATH到go的bin目录
+
 
 ### 升级包
 go mod edit -require="github.com/gin-gonic/gin@v1.3.0"
