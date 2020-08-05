@@ -31,8 +31,7 @@ var serveCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("serve starting...")
 		r := gin.Default()
-
-		configs.InitConfig()
+		configs.InitApplication()
 
 		r.Run() // listen and serve on 0.0.0.0:8080
 	},

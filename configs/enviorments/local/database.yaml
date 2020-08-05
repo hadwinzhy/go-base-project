@@ -1,0 +1,8 @@
+db:
+    default:
+        driver: 'postgres'
+        dbname: 'tools_dev'
+        username: 'postgres'
+        password: 'yckj@123'
+        host:     10.128.122.172
+        port:     31881
